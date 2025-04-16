@@ -633,15 +633,10 @@ html::-webkit-scrollbar-thumb:active {
     z-index: 2;
 }
 
-.switchMathSymbolsButtons {
-    font-size: 20px;
-    background-color: var(--switchSymbols-color);
-    cursor: default;
-}
-
-.symbolsButtons {
+.symbolsButtons, .switchMathSymbolsButtons {
     font-size: 20px;
     background-color: var(--mathSymbols-color);
+    color: var(--text-background-color);
     cursor: default;
 }
 
