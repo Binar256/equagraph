@@ -4,7 +4,7 @@ import { activateInputBox } from "./ui/script/input-box.js";
 import { activateOutputBox } from "./ui/script/output-box.js";
 import { enableResizer } from "./ui/script/window-resize.js";
 
-if (window.matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.dataset.theme = "dark";
+if (window.matchMedia("(prefers-color-scheme: light)").matches) document.documentElement.dataset.theme = "light";
 
 window.onload = () => {
     activateSettings();
@@ -12,7 +12,7 @@ window.onload = () => {
     activateInputBox();
     activateOutputBox();
     enableResizer();
-    document.body.style.opacity = 1;
+    document.documentElement.style.opacity = 1;
 }
 
 // TJC boot.dev;
