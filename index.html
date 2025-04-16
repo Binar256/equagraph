@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <title>EquaGraph</title>
+
+    <link rel="stylesheet" href="mathquill-0.10.1/mathquill.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" defer></script> 
+    <script src="mathquill-0.10.1/mathquill.min.js" defer></script>
+
+    <style> body { opacity: 0; } </style>
+    <link rel="stylesheet" href="ui/styles.css">
+    <script type="module" src="main.js"></script> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+<body>
+    <header id="header">EquaGraph</header>
+    <div id="compactContainer"></div>
+    <div id="main">
+        <div id="settingsHideout"></div>
+        <div id="settingsIcon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>  
+        <div id="settingsMouseLeave"></div>
+        <div id="settings">
+            <div class="settingsItemsEmptyBox"></div>
+            <button type="button" class="settingsItems buttonClass" id="darkmode">
+                <span>Dark mode </span>
+                <img class="icon checkIcon" src="icons/check-solid.svg" alt="On" width="20px" height="20px">
+            </button>
+            <button type="button" class="settingsItems buttonClass" id="function1">
+                <span>function1</span>
+                <img class="icon checkIcon" src="icons/check-solid.svg" alt="On" width="20px" height="20px">
+            </button>
+            <button type="button" class="settingsItems buttonClass" id="function2">
+                <span>function2</span>
+                <img class="icon checkIcon" src="icons/check-solid.svg" alt="On" width="20px" height="20px">
+            </button>
+            <button type="button" class="settingsItems buttonClass" id="function3">
+                <span>function3</span>
+                <img class="icon checkIcon" src="icons/check-solid.svg" alt="On" width="20px" height="20px">
+            </button>
+            <button type="button" class="settingsItems buttonClass" id="keepOpenSettings" >
+                <span>Keep settings open</span>
+                <img class="icon checkIcon" src="icons/check-solid.svg" alt="On" width="20px" height="20px">
+            </button>
+        </div>
+
+        <div id="inputBox" class="inputBox_PlaceHolder buttonClass"></div>
+        <div id="inputBoxPlaceholder" class="inputBox_PlaceHolder buttonClass">Enter a mathematical expression</div>
+        <button type="button" class="buttonClass" id="clearInputButton">
+            <img class="icon" src="icons/xmark-solid.svg" alt="x" width="14px" height="14px">
+        </button>
+        <div id="messageBox"></div>
+
+        <button type="button" id="addButton" class="pageButtons buttonClass" title="Hold to add expression">
+            <img class="icon" src="icons/plus-solid.svg" alt="Add" width="35px" height="35px">
+        </button>
+        <button type="button" id="upButton" class="pageButtons buttonClass" title="Show previous expression">
+            <img class="icon" src="icons/arrow-up-solid.svg" alt="Up" width="30px" height="30px">
+        </button>
+        <button type="button" id="downButton" class="pageButtons buttonClass" title="Show next expression">
+            <img class="icon" src="icons/arrow-down-solid.svg" alt="Down" width="30px" height="30px">
+        </button>
+        <output id="outputBox"></output> 
+        <div id="actionButtonsMenu">
+            <button type="button" id="editButton" class="actionButton buttonClass">Edit</button>
+            <button type="button" id="removeButton" class="actionButton buttonClass">Remove</button>
+            <button type="button" id="deleteButton" class="actionButton buttonClass">Delete</button>
+        </div>
+        <div id="invalidInputBox">Invalid input</div>
+        <div id="copyMessageBox">Copied to clipboard
+            <img id="copyIcon" class="icon" src="icons/copy-solid.svg" onerror="this.style.display='none';" width="16px" height="16px">
+        </div>
+
+        <button type="button" id="showMathSymbols" class="buttonClass">Show symbols</button>
+        <div id="mathSymbols" class="mathSymbolsClass"></div>
+        <div id="mathSymbolsCompact1" class="mathSymbolsClass"></div>
+        <div id="mathSymbolsCompact2" class="mathSymbolsClass"></div>
+        <div id="mathSymbolsHideout"></div>
+        <div id="moveThroughText">
+            <button type = button class="moveTT buttonClass" id="deleteSymbol">
+                <img class="icon" src="icons/delete-left-solid.svg" alt="Del" width="30px" height="30px">
+            </button>
+            <button type = button class="moveTT buttonClass" id="leftSymbol">
+                <img class="icon" src="icons/arrow-left-solid.svg" alt="Left" width="30px" height="30px">
+            </button>
+            <button type = button class="moveTT buttonClass" id="rightSymbol">
+                <img class="icon" src="icons/arrow-right-solid.svg" alt="Right" width="30px" height="30px">
+            </button>
+            <button type="button" class="moveTT buttonClass" id="solve">Solve</button>
+        </div>
+    </div>  
+    <footer id="footer"></footer>
+</body>
+</html>

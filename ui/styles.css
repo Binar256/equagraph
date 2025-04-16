@@ -1,0 +1,676 @@
+:root {
+    --primary-color: #288181;
+    --primary-color-light: #48aaaa;
+    --text-background-color: white;
+    --dark-color: #242323;
+    --theme-color: var(--dark-color);
+
+    --moveTT-alt-color: #40c2c2;    
+    --dots-click-color: #999b9e;
+}
+
+[data-theme="light"] {
+    --primary-adapt-color: var(--primary-color-light); 
+    --text-color: var(--dark-color);
+    --page-color: white;
+
+    --menu-color: var(--dark-color);
+
+    --button-hover-color: #235e5e;
+    --button-click-color: #205252;
+
+    --inputBox-color: #cecece;
+    --inputBox-placeholder-color: #9c9c9c;
+    --mq-empty-color: #bebbbb;
+
+    --collapseButton-active-color: #2cbcf5;
+    --collapseButton-color: #009ee2;
+
+    --mathSymbols-color: #4e4c4c;
+    --symbols-hover-color: #363535;
+    --symbols-click-color: #2e2c2c;
+    --switchSymbols-color: #838181;
+    --switchSymbols-hover-color: #696767;
+    --switchSymbols-click-color: #5e5c5c;
+
+    --copy-color: #1caed393;
+    --blur-color: #b3adad;
+
+    --message-color: #be4444;
+    --invaliInput-color: #e61919;
+
+    --scrollbar-color: #3b3a3a;
+    --scrollbar-hover-color: #6d6b6b;
+    --scrollbar-click-color: #888686;
+
+    --moz-small-scrollbar-color: #b8b2b2;
+
+    --small-scrollbar-color: #888484;;
+    --small-scrollbar-hover-color: #706f6f;
+    --small-scrollbar-click-color: #4b4a4a;
+
+    --page-buttons-hover-color: #e0d9d9;
+    --page-buttons-click-color: #c0bbbb;
+}
+
+[data-theme="dark"] {
+    --primary-adapt-color: var(--primary-color);
+    --text-color: white;
+    --page-color: var(--theme-color);
+
+    --menu-color: white; 
+    --button-hover-color: #205a5a;
+    --button-click-color: #1e4949;
+
+    --inputBox-color: #5f5f5f;
+    --inputBox-placeholder-color: #868686;
+    --mq-empty-color: #777676;
+
+    --collapseButton-active-color: #108cbd;
+    --collapseButton-color: #17b7f7;
+
+    --mathSymbols-color: #363434;
+    --symbols-hover-color: #2b2929;
+    --symbols-click-color: #272525;
+    --switchSymbols-color: #5f5f5f;
+    --switchSymbols-hover-color: #505050;
+    --switchSymbols-click-color: #474646;
+
+    --copy-color: #4eb5cf93;
+    --blur-color: #928f8f;
+
+    --message-color: #9e4848;
+    --invaliInput-color: #e61919;
+
+    --scrollbar-color: #555252;
+    --scrollbar-hover-color: #706e6e;
+    --scrollbar-click-color: #b1aeae;
+
+    --moz-small-scrollbar-color: #555353;
+
+    --small-scrollbar-color: #555252;
+    --small-scrollbar-hover-color: #706e6e;
+    --small-scrollbar-click-color: #a09d9d;
+
+    --page-buttons-hover-color: #353232;
+    --page-buttons-click-color: #474444;
+}
+
+:root {
+    --head-font-family: Georgia, 'Times New Roman', Times, serif;
+    --secondary-font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+    color-scheme: light dark;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--page-color);
+}
+
+@supports (-moz-appearance: none) {
+    html {
+        scrollbar-width: thin;
+        scrollbar-color: var(--scrollbar-color) transparent;
+    }
+}
+
+html::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+    border-radius: 6px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-hover-color);
+}
+
+html::-webkit-scrollbar-thumb:active {
+    background: var(--scrollbar-click-color);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#compactContainer {
+    position: absolute;
+    top: max(100px, 13vh);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+#main { 
+    position: absolute;
+    width: 100vw;
+    height: 74vh;
+    display: flex;  
+    font-family: var(--secondary-font-family);
+    justify-content: center;
+}   
+
+#header {
+    position: absolute;
+    width: 100vw;  
+    height: 13vh;
+    min-height: max(100px, 13vh);
+    background-color: var(--primary-color);
+    font-size: max(54px, calc(7vh));
+    font-family: var(--head-font-family);
+    color: white;
+    text-shadow: 2px 2px 5px #00000080;
+    padding-left: 2vw;
+    line-height: max(92px, calc(12vh));
+    z-index: 10;
+    user-select: none;
+}
+
+#footer {
+    position: absolute;
+    min-height: max(100px, calc(13vh));
+    width: 100vw;  
+    height: 13vh;
+    top: 74vh;
+    background-color: var(--primary-color);
+    font-family: var(--secondary-font-family);
+    color: var(--text-background-color);
+}
+
+.buttonClass {
+    border: none;
+    outline: none;
+    user-select: none;
+}
+
+.bar {
+    width: 24px;  
+    background-color: var(--menu-color);
+}
+
+#clearInputButton {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: var(--mathSymbols-color);
+    right: 10px;
+    top: 15px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 6;
+    visibility: hidden;
+}
+
+.inputBox_PlaceHolder {
+    position: absolute;
+    width: min(500px, calc(90vw));
+    transform: translateY(20px);
+    border-radius: 5px;
+    padding: 8px;
+}
+
+#inputBox {
+    min-height: 50px;
+    background: transparent;
+    color: var(--text-color);
+    border-color: var(--text-color);
+    z-index: 5; 
+    box-shadow: none;
+    font-size: 29px;
+}
+
+#inputBox .mq-cursor {
+    border-left: 1px solid var(--text-color);
+}
+
+#inputBox.mq-math-mode .mq-empty:not(.mq-root-block) {
+    background: var(--mq-empty-color);
+}
+
+#outputBox .mq-math-mode .mq-empty {
+    background: transparent;
+}
+
+.mq-math-mode .mq-selection,
+.mq-math-mode .mq-selection .mq-non-leaf,
+.mq-math-mode .mq-selection .mq-scaled {
+    background: var(--copy-color) !important;
+}
+
+.mq-math-mode .mq-selection.mq-blur,
+.mq-math-mode .mq-selection .mq-non-leaf.mq-blur,
+.mq-math-mode .mq-selection .mq-scaled.mq-blur {
+    background: var(--blur-color) !important;
+    color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+#inputBoxPlaceholder {
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    background-color: var(--inputBox-color);
+    color: var(--inputBox-placeholder-color);
+    border: 1px solid var(--text-color);
+    font-size: 20px;
+    z-index: 4;
+}
+
+@supports (-moz-appearance: none) {
+    #outputBox .mq-root-block {
+        scrollbar-width: thin;
+        scrollbar-color: var(--moz-small-scrollbar-color) transparent;
+    }
+}
+
+#outputBox .mq-root-block {
+    overflow: auto;
+}
+
+#outputBox .mq-root-block::-webkit-scrollbar {
+    height: 4px;
+    background-color: transparent;
+}
+
+#outputBox .mq-root-block::-webkit-scrollbar-thumb {
+    background-color: var(--small-scrollbar-color);
+    border-radius: 4px;
+}
+
+#outputBox .mq-root-block::-webkit-scrollbar-thumb:hover {
+    background-color: var(--small-scrollbar-hover-color);
+}
+
+#outputBox .mq-root-block::-webkit-scrollbar-thumb:active {
+    background-color: var(--small-scrollbar-click-color);
+}
+
+#outputBox .mq-root-block {
+    cursor: default;
+}
+
+#outputBox {
+    position: absolute;
+    height: auto;
+    width: min(500px, calc(90vw));
+    transform: translateY(100px);
+    color: var(--text-color);
+    padding: 8px;
+    font-size: 25px;
+    transition: margin-top 0.5s ease-out;
+    padding-bottom: 30px; 
+}
+
+.div {
+    transition: max-height 0.5s ease-out;
+}
+
+.exp {
+    position: relative;
+    width: min(484px, calc(90vw - 16px));
+    overflow: hidden;
+}
+
+.expDivHidden {
+    max-height: 0px;
+    margin-bottom: 0px;
+}
+
+.expDiv {
+    transition: max-height 0.5s ease-out, margin-bottom 0.5s ease-out;
+}
+
+.expButtons {
+    position: absolute;
+    height: 10px;
+    width: 24px;
+    background: none;
+    cursor: pointer;
+    top: -1px;
+    right: 0px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 3px;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: var(--text-color);
+}
+
+.collapseButton {
+    position: absolute;
+    background: transparent;
+    color: var(--collapseButton-color);
+    font-size: 14px;
+    cursor: pointer;
+    bottom: 1px;
+    right: 0px;
+    z-index: 1;
+}
+
+.collapseButton:active {
+    color: var(--collapseButton-active-color);
+}
+
+.expCalcContainer {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.relative {
+    position: relative;
+}
+
+#actionButtonsMenu {
+    position: absolute;
+    max-height: 0px;
+    width: 80px;
+    z-index: 7;
+    display: grid;
+    gap: 0px;
+    grid-template-rows: repeat(3, 1fr);
+    overflow: hidden;
+}
+
+.actionButton {
+    height: 40px;
+    background-color: var(--mathSymbols-color);
+    color: var(--text-background-color);
+    font-size: 1em;
+    text-align: left;
+    padding: 10px;
+}
+
+#invalidInputBox {
+    width: 484px;
+    display: none;
+    color: var(--invaliInput-color);
+}
+
+#copyMessageBox {
+    position: absolute;
+    max-width: 0px;
+    font-size: 14px;
+    background: var(--mathSymbols-color);
+    border-radius: 5px;
+    user-select: none;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#copyIcon {
+    position: relative;
+    right: -4px;
+    top: -1px
+}
+
+#messageBox {
+    max-width: 90vw;
+    padding: 10px;
+    background-color: var(--message-color);
+    color: white;
+    border-radius: 5px;
+    position: absolute;
+    transform: translateY(20px);
+    z-index: 9;
+    visibility: hidden;
+    user-select: none;
+    text-align: center;
+}
+
+.pageButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--page-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    z-index: 3;
+}
+
+#addButton {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    transform: translate(280px, 25px);
+}
+
+.separator {
+    width: min(484px, calc(90vw - 16px));
+    background-color: var(--primary-adapt-color);
+    border-radius: 5px;
+    height: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.separatorVisible {
+    transition: margin-top 0.5s ease-out, margin-bottom 0.5s ease-out, height 0.3s ease-out;
+    height: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.icon {
+    pointer-events: none;
+    user-select: none;
+} 
+
+#upButton {
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    transform: translate(-275px, 27px);
+}
+
+#downButton {
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    transform: translate(-310px, 27px);
+}
+
+#settingsHideout {
+    position: absolute;
+    height: 300px;
+    width: 204px;
+    transform: translate(-450px, -280px);
+    background-color: var(--page-color);
+    z-index: 9;
+}
+
+#settings {
+    position: absolute;
+    transform: translate(-450px, -280px);
+    height: 300px;
+    width: 200px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    overflow: hidden;
+    z-index: 8;
+}
+
+#settingsIcon {
+    position: absolute;
+    width: 24px;
+    height: 20px;
+    transform: translate(-525px, 35px);
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 7px;  
+    z-index: 9;
+}
+
+.settingsItems {
+    display: flex;
+    align-items: center;  
+    font-size: 1em;
+    padding-left: 10px;
+    color: var(--text-background-color);;
+    background-color: var(--primary-color);
+}
+
+.settingsItemsEmptyBox {
+    background-color: var(--primary-color);
+}
+
+.settingsItems:hover{
+    background-color: var(--button-hover-color);
+}
+
+.settingsItems:active{
+    background-color: var(--button-click-color);
+}
+
+#settingsMouseLeave {
+    position: absolute;
+    height: 300px;
+    width: 200px;
+    transform: translate(-450px, 20px);
+}
+
+#iconMenu{
+    border: 0;
+    background-color: var(--primary-color);
+}
+
+.checkIcon {
+    visibility: hidden;
+    position: absolute;
+    right: 10px;
+}
+
+.showIconSettings {
+    visibility: visible;
+}
+
+#showMathSymbols {
+    position: absolute;
+    width: 140px;
+    height: 40px;
+    line-height: 25px;
+    transform: translate(400px, 20px);
+    background-color: var(--primary-color);
+    color: var(--text-background-color);
+    border-radius: 5px;
+    z-index: 3;
+}
+
+#showMathSymbols:hover {
+    background-color: var(--button-hover-color);
+}
+
+#showMathSymbols:active {
+    background-color: var(--button-click-color);
+}
+
+.mathSymbolsClass {
+    position: absolute;
+    background-color: var(--page-color);
+    color: var(--text-background-color);
+    z-index: 1;
+}
+
+#mathSymbols {
+    height: 490px;
+    width: 244px;
+    transform: translate(453px, -430px);
+    display: grid;
+    visibility: hidden;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 2px;
+}
+
+#mathSymbolsCompact1 {
+    height: 278px;
+    width: 408px;
+    transform: translate(-41px, 90px);
+    display: grid;
+    visibility: hidden;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2px;
+    z-index: 1;
+}
+
+#mathSymbolsCompact2 {
+    height: 68px;
+    width: 80px;
+    transform: translate(205px, 300px);
+    display: grid;
+    visibility: hidden;
+    z-index: 1;
+} 
+
+#mathSymbolsHideout {
+    position: absolute;
+    height: 492px;
+    width: 314px;
+    background-color: var(--page-color);
+    transform: translate(485px, -430px);
+    z-index: 2;
+}
+
+.switchMathSymbolsButtons {
+    font-size: 20px;
+    background-color: var(--switchSymbols-color);
+    cursor: default;
+}
+
+.symbolsButtons {
+    font-size: 20px;
+    background-color: var(--mathSymbols-color);
+    cursor: default;
+}
+
+.symbolsButtons::selection, 
+.switchMathSymbolsButtons::selection {
+    background-color: transparent !important;
+}
+
+.mathSymbolsClass .mq-selection,
+.mathSymbolsClass .mq-selection .mq-non-leaf,
+.mathSymbolsClass .mq-selection .mq-scaled {
+    background: transparent !important;
+}
+
+#moveThroughText {
+    position: absolute;
+    height: 210px;
+    width: 60px;
+    transform: translate(610px, -150px);
+    background-color: var(--mathSymbols-color);
+    border-radius: 5px;
+    z-index: 1;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.moveTT {
+    background-color: var(--mathSymbols-color);
+    font-size: 20px;
+    color: var(--moveTT-alt-color);
+}
