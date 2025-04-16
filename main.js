@@ -12,10 +12,7 @@ window.onload = () => {
     activateInputBox();
     activateOutputBox();
     enableResizer();
-    setTimeout(() => {
-        document.body.style.opacity = 1;
-    }, 1000)
-  
+    document.body.style.opacity = 1;
 }
 
 // TJC boot.dev;
