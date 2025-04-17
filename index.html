@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark" data-color-scheme="dark">
+<html lang="en" data-theme="light">
 <head>
     <title>EquaGraph</title>
+    
+    <style> body { opacity: 0; } </style>
+    <script> if (window.matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.dataset.theme = "dark"; </script>
 
     <link rel="stylesheet" href="mathquill-0.10.1/mathquill.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" defer></script> 
     <script src="mathquill-0.10.1/mathquill.min.js" defer></script>
 
-    <style> 
-        body { opacity: 0; }
-        html { color-scheme: light dark }
-     </style>
     <link rel="stylesheet" href="ui/styles.css">
     <script type="module" src="main.js"></script> 
     <script type="module" src="console.js"></script> 
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="darkreader-lock">
+    <meta name="color-scheme" content="dark light">
 </head>
 <body>
     <header id="header">EquaGraph</header>

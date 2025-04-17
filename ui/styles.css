@@ -408,6 +408,7 @@ html::-webkit-scrollbar-thumb:active {
     max-width: 0px;
     font-size: 14px;
     background: var(--mathSymbols-color);
+    color: var(--text-background-color);
     border-radius: 5px;
     user-select: none;
     z-index: 6;

@@ -1,10 +1,12 @@
-export let menuOpen = false;
 export const settings = document.getElementById("settings");
 export const settingsIcon = document.getElementById("settingsIcon");
 export const settingsHideout = document.getElementById("settingsHideout");
 export const settingsMouseLeave = document.getElementById("settingsMouseLeave");
+
 const buttonSettingsElements = ["darkmode", "function1", "function2", "function3", "keepOpenSettings"];
 const buttonSettings = [];
+
+export let menuOpen = false;
 let windowWidth = window.innerWidth;
 let loaded = false;
 
@@ -27,7 +29,7 @@ function loadSettings() {
             buttonSettings[i].status = !buttonSettings[i].status;
         });
     }
-    if (document.documentElement.dataset.theme = "dark") {
+    if (document.documentElement.dataset.theme === "dark") {
         buttonSettings[0].status = true;
         buttonSettings[0].child.classList.toggle("showIconSettings");
     }
@@ -129,7 +131,6 @@ function someThemes() {
 function setupTimeout() {
     let timeout;
     return (startTimeout) => {
-        console.count(startTimeout);
         if (timeout) clearTimeout(timeout);
         if (startTimeout) timeout = setTimeout(() => {
             const rootStyles = getComputedStyle(document.documentElement);
