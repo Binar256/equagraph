@@ -84,6 +84,7 @@ function loadInputBox() {
 
     mathField.el().addEventListener("dblclick", (event) => copiedLatex(mathField, event))
 
+    inputBox.firstChild.firstChild.addEventListener("focus", () => inputBoxFocus(true));
     inputBox.firstChild.firstChild.addEventListener("blur", () => inputBoxFocus(false));
     inputBox.firstChild.firstChild.addEventListener("keydown", event => {
         if ((event.ctrlKey || event.metaKey) && event.key === "a") event.stopPropagation();  
