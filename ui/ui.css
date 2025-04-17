@@ -192,6 +192,7 @@ html::-webkit-scrollbar-thumb:active {
 
 .bar {
     width: 24px;  
+    height: 2px;
     background-color: var(--menu-color);
 }
 
@@ -333,7 +334,7 @@ html::-webkit-scrollbar-thumb:active {
 .expButtons {
     position: absolute;
     height: 10px;
-    width: 24px;
+    width: 23px;
     background: none;
     cursor: pointer;
     top: -1px;
@@ -341,7 +342,7 @@ html::-webkit-scrollbar-thumb:active {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    gap: 3px;
+    gap: 4px;
 }
 
 .dot {
@@ -549,11 +550,6 @@ html::-webkit-scrollbar-thumb:active {
     height: 300px;
     width: 200px;
     transform: translate(-450px, 20px);
-}
-
-#iconMenu{
-    border: 0;
-    background-color: var(--primary-color);
 }
 
 .checkIcon {

@@ -1,8 +1,8 @@
-import { activateSettings } from "./ui/script/settings.js";
-import { activateMathSymbols } from "./ui/script/math-symbols.js";
-import { activateInputBox } from "./ui/script/input-box.js";
-import { activateOutputBox } from "./ui/script/output-box.js";
-import { enableResizer } from "./ui/script/window-resize.js";
+import { activateSettings } from "./ui/ui-scripts/settings.js";
+import { activateMathSymbols } from "./ui/ui-scripts/math-symbols.js";
+import { activateInputBox } from "./ui/ui-scripts/input-box.js";
+import { activateOutputBox } from "./ui/ui-scripts/output-box.js";
+import { enableResizer } from "./ui/ui-scripts/window-resize.js";
 
 window.onload = () => {
     activateSettings();

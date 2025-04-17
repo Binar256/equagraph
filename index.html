@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
 <head>
     <title>EquaGraph</title>
-    
+
     <style> body { opacity: 0; } </style>
     <script> if (window.matchMedia("(prefers-color-scheme: dark)").matches) document.documentElement.dataset.theme = "dark"; </script>
 
@@ -10,9 +10,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" defer></script> 
     <script src="mathquill-0.10.1/mathquill.min.js" defer></script>
 
-    <link rel="stylesheet" href="ui/styles.css">
+    <link rel="stylesheet" href="ui/ui.css">
+    <link rel="stylesheet" href="terminal/terminal.css">  
     <script type="module" src="main.js"></script> 
-    <script type="module" src="console.js"></script> 
+    <script type="module" src="terminal/terminal.js"></script> 
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -100,5 +101,6 @@
         </div>
     </div>  
     <div id="footer"></div>
+    <div id="terminal"></div>
 </body>
 </html>

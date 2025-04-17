@@ -4,8 +4,6 @@ const commandsList = ["list", "clear", "history"];
 const commandObjects = [cmd, command];
 let cmdExecuted = false;
 
-// commnads
-
     commandObjects.forEach((obj) => {
         commandsList.forEach((command) => {
             Object.defineProperty(obj, command, {

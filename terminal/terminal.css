@@ -1,0 +1,13 @@
+:root {
+    --terminal-color: black;
+
+}
+
+#terminal {
+    display: none;
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    background-color: black;
+    z-index: 100;
+}
